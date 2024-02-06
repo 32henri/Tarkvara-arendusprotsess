@@ -1,0 +1,55 @@
+#test{
+    font-family: 'Comic Sans MS';
+    color: rgb(73, 136, 204);
+}
+body{
+    -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 1s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+#linkcolor{
+    animation: textcolor 1s infinite;
+}
+
+#wiplinkcolor{
+    color:gold;
+}
+
+h1{
+    animation: textcolor 1s infinite;
+}
+
+
+p{
+    
+    font-family: 'Comic Sans MS';
+    animation: textcolor 1s infinite;
+}
+
+ul{
+    
+    font-family: 'Comic Sans MS';
+    animation: textcolor 1s infinite;
+}
+
+@keyframes textcolor {
+  0% { color: black; }
+  50% { color: white; }
+  100% { color: black; }
+}
+
+@keyframes bgcolor {
+    0% {
+        background-color: white
+    }
+
+    50% {
+        background-color: black
+    }
+
+    100% {
+        background-color: white
+    }
+}
