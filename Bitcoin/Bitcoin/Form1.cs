@@ -20,21 +20,21 @@ namespace Bitcoin
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void getratesnupp_Click(object sender, EventArgs e)
         {
-            if (currencyCombo.SelectedItem.ToString() == "EUR")
+            if (selectcurrency.SelectedItem.ToString() == "EUR")
             {
-                ResultLabel.Visible = true;
-                resulttextBox.Visible = true;
+                resulttext.Visible = true;
+                resultbox.Visible = true;
                 BitCoinRates bitcoin = GetRates();
-                float result = Int32.Parse(amountofbtc.Text) * bitcoin.bpi.EUR.rate_float;
-                resulttextBox.Text = $"{result.ToString()} {bitcoin.bpi.EUR.code}";
+                float result = Int32.Parse(resultbox.Text) * bitcoin.bpi.EUR.rate_float;
+                resultbox.Text = $"{result.ToString()} {bitcoin.bpi.EUR.code}";
             }
         }
 
-        private void label2_Click_1(object sender, EventArgs e)
+        private void getratesnupp_Click_1(object sender, EventArgs e)
         {
-
+            
         }
 
         public static BitCoinRates GetRates()
