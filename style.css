@@ -15,21 +15,25 @@
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }
-.button-blue {
-    background-color: blue;
-    color: white;
+.stylebutton1 {
+    -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 1s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
 }
 
-.button-red {
-    background-color: red;
-    color: black;
+.stylebutton2 {
+    -webkit-animation: bgcolor2 20s infinite;
+    animation: bgcolor2 1s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
 }
 
@@ -89,11 +93,19 @@ ul{
         background-color: blue
     }
 
+    25% {
+        background-color: red
+    }
+
     50% {
-        background-color: gold
+        background-color: green
+    }
+
+    75% {
+        background-color: white
     }
 
     100% {
-        background-color: blue
+        background-color: gold
     }
 }
