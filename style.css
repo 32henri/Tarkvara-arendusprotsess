@@ -15,6 +15,11 @@
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }
+
+.body3 {
+    background-color: azure;
+}
+
 .stylebutton1 {
     -webkit-animation: bgcolor 20s infinite;
     animation: bgcolor 1s infinite;
@@ -47,12 +52,15 @@
 
 h1{
     animation: textcolor 1s infinite;
+    font-family: 'Comic Sans MS';
 }
 h2{
     animation: textcolor 1s infinite;
+    font-family: 'Comic Sans MS';
 }
 h3{
     animation: textcolor 1s infinite;
+    font-family: 'Comic Sans MS';
 }
 
 
