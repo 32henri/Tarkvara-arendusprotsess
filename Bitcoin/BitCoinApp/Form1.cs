@@ -22,22 +22,43 @@ namespace BitCoinApp
 
         private void btnGetRates_Click(object sender, EventArgs e)
         {
+            if (CurrencyCombo.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a currency.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(amountOfCoinBox.Text))
+            {
+                MessageBox.Show("Please enter a BTC amount.");
+                return;
+            }
+
+            resultLabel.Visible = true;
+            ResultTextBox.Visible = true;
+            BitCoinRates bitcoin = GetRates();
+
+            float rate;
+            string code;
+
             if (CurrencyCombo.SelectedItem.ToString() == "EUR")
             {
-                resultLabel.Visible = true;
-                ResultTextBox.Visible = true;
-                BitCoinRates bitcoin = GetRates();
-                float result = Int32.Parse(amountOfCoinBox.Text) * bitcoin.bpi.EUR.rate_float;
-                ResultTextBox.Text = $"{result.ToString()} {bitcoin.bpi.EUR.code}";
+                rate = bitcoin.bpi.EUR.rate_float;
+                code = bitcoin.bpi.EUR.code;
             }
-            if (CurrencyCombo.SelectedItem.ToString() == "USD")
+            else if (CurrencyCombo.SelectedItem.ToString() == "USD")
             {
-                resultLabel.Visible = true;
-                ResultTextBox.Visible = true;
-                BitCoinRates bitcoin = GetRates();
-                float result = Int32.Parse(amountOfCoinBox.Text) * bitcoin.bpi.USD.rate_float;
-                ResultTextBox.Text = $"{result.ToString()} {bitcoin.bpi.USD.code}";
+                rate = bitcoin.bpi.USD.rate_float;
+                code = bitcoin.bpi.USD.code;
             }
+            else
+            {
+                MessageBox.Show("Unsupported currency.");
+                return;
+            }
+
+            float result = float.Parse(amountOfCoinBox.Text) * rate;
+            ResultTextBox.Text = $"{result.ToString()} {code}";
         }
 
         public static BitCoinRates GetRates()
